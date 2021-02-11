@@ -1,13 +1,12 @@
 export interface SingleSongProps {
-    info: {
+    song: {
         album: {
-          cover_xl: string;
+          id: string,
+          cover:any,
+         title:string;
         };
-        title: string;
-        artist: {
-          name: string;
-        };
-        id: number;
-      };
+    }
+     
+    
     
   }

@@ -1,8 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
+
 import Home from "./components/Home"
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Detail from "./components/Detail"
+
+
+
+
 
 
 function App() {
@@ -10,7 +16,11 @@ function App() {
     <div className="App">
       <header className="App-header">
      <Router>
-      <Home/>
+    
+     <Route path="/" render={(props) => <Home {...props} />} />
+     <Route path="/Details/:id"render={(props) => <Detail {...props} />} />
+      
+    
       </Router>
        
       </header>
