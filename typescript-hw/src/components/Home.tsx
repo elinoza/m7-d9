@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, InputGroup, FormControl,Col, Button, Row,CarouselItem,Image } from "react-bootstrap";
+import { RouteComponentProps,withRouter } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import SingleSong from "./SingleSong"
 
@@ -15,8 +16,9 @@ interface State {
     title?: string
  
   }
+  type MixProps = RouteComponentProps & Props;
 
-class Home extends Component <Props,State>{
+class Home extends Component <MixProps,State>{
 
     state = {
         search:"eminem",
@@ -39,10 +41,7 @@ class Home extends Component <Props,State>{
         this.setState({songs:songs})
 
       }
-componentDidMount=async ()=>{
-    
-   
-}
+
 
 
 handleSearch=(event: React.MouseEvent<HTMLElement>)=> {
@@ -77,4 +76,4 @@ handleSearch=(event: React.MouseEvent<HTMLElement>)=> {
         )
     }
 }
-export default Home
+export default withRouter(Home)
